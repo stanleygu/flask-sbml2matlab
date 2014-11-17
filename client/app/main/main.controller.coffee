@@ -11,9 +11,9 @@ angular.module 'flaskSbml2matlabApp'
     if newVal is oldVal
       return
 
-    doc = parser.parseFromString($scope.text.sbml, 'text/xml')
+    doc = parser.parseFromString(newVal, 'text/xml')
     if doc.getElementsByTagName('sbml').length > 0
-      $http.post '/translate'
+      $http.post '/translate', {sbml: $scope.text.sbml}
         .then (res) ->
           $scope.text.matlab = res.data
     else

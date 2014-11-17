@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__, static_url_path='')
 
@@ -10,7 +10,9 @@ def root():
 
 @app.route('/translate', methods=['post'])
 def translate():
-    return 'TRANSLATION'
+    data = request.get_json()
+    sbml = data.get('sbml')
+    return sbml
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)
