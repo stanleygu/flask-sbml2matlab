@@ -81,6 +81,12 @@ module.exports = function(grunt) {
         ],
         tasks: ['newer:jshint:all', 'karma']
       },
+      index: {
+        files: [
+          '<%= yeoman.client %>/index.html'
+        ],
+        tasks: ['copy:tmp']
+      },
       jade: {
         files: [
           '<%= yeoman.client %>/{app,components}/*',
@@ -630,7 +636,6 @@ module.exports = function(grunt) {
       'autoprefixer',
       'copy:tmp',
       'copy:styles',
-      'shell:flask',
       'wait',
       'watch'
     ]);

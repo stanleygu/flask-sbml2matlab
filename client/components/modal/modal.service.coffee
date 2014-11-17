@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module 'sbml2matlabappApp'
+angular.module 'flaskSbml2matlabApp'
 .factory 'Modal', ($rootScope, $modal) ->
   
   ###

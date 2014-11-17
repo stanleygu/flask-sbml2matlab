@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module 'sbml2matlabappApp'
+angular.module 'flaskSbml2matlabApp'
 .controller 'NavbarCtrl', ($scope, $location) ->
   $scope.menu = [
     title: 'Home'

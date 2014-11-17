@@ -26,7 +26,7 @@
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
-  <body ng-app="sbml2matlabappApp">
+  <body ng-app="flaskSbml2matlabApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -50,6 +50,7 @@
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
     <!-- build:js({client,node_modules}) app/vendor.js -->
+      <script src="bower_components/ace-builds/src-min-noconflict/ace.js"></script>
       <!-- bower:js -->
       <script src="bower_components/jquery/dist/jquery.js"></script>
       <script src="bower_components/angular/angular.js"></script>
@@ -59,8 +60,31 @@
       <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/angular-ui-ace/ui-ace.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
+
+    <!-- build:js(app) ace/mode-xml.js-->
+    <script src="bower_components/ace-builds/src-min-noconflict/mode-xml.js"></script>
+    <!-- endbuild-->
+    <!-- build:js(app) ace/mode-json.js-->
+    <script src="bower_components/ace-builds/src-min-noconflict/mode-json.js"></script>
+    <!-- endbuild-->
+    <!-- build:js(app) ace/mode-matlab.js-->
+    <script src="bower_components/ace-builds/src-min-noconflict/mode-matlab.js"></script>
+    <!-- endbuild-->
+    <!-- build:js(app) ace/theme-solarized_dark.js-->
+    <script src="bower_components/ace-builds/src-min-noconflict/theme-solarized_dark.js"></script>
+    <!-- endbuild-->
+    <!-- build:js(app) ace/theme-solarized_light.js-->
+    <script src="bower_components/ace-builds/src-min-noconflict/theme-solarized_light.js"></script>
+    <!-- endbuild-->
+    <!-- build:js(app) ace/theme-github.js-->
+    <script src="bower_components/ace-builds/src-min-noconflict/theme-github.js"></script>
+    <!-- endbuild-->
+    <!-- build:js(app) worker-json.js-->
+    <script src="bower_components/ace-builds/src-min-noconflict/worker-json.js"></script>
+    <!-- endbuild-->
 
         <!-- build:js({.tmp,client}) app/app.js -->
         <script src="app/app.js"></script>
