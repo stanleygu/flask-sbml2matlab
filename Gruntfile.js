@@ -432,7 +432,7 @@ module.exports = function(grunt) {
     concurrent: {
       server: [
         'coffee',
-        'jade',
+        'jade'
       ],
       test: [
         'coffee',
@@ -632,7 +632,6 @@ module.exports = function(grunt) {
       'copy:styles',
       'shell:flask',
       'wait',
-      'open',
       'watch'
     ]);
   });

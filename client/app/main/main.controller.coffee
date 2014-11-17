@@ -1,4 +1,4 @@
 'use strict'
 
-angular.module 'sbml2matlabappApp'
+angular.module 'flaskSbml2matlabApp'
 .controller 'MainCtrl', ($scope, $http) ->
