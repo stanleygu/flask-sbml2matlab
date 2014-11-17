@@ -5,11 +5,16 @@ angular.module 'flaskSbml2matlabApp'
   $scope.text = {}
   parser = new DOMParser()
 
-  $scope.$watch 'text.sbml', (newVal) ->
+  $scope.$watch 'text.sbml', (newVal, oldVal) ->
     if not newVal?
+      return
+    if newVal is oldVal
       return
 
     doc = parser.parseFromString($scope.text.sbml, 'text/xml')
     if doc.getElementsByTagName('sbml').length > 0
-      alert 'Valid SBML!'
-
+      $http.post '/translate'
+        .then (res) ->
+          $scope.text.matlab = res.data
+    else
+      $scope.text.matlab = ''

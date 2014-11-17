@@ -8,7 +8,7 @@ def root():
     return app.send_static_file('index.html')
 
 
-@app.route('/translate')
+@app.route('/translate', methods=['post'])
 def translate():
     return 'TRANSLATION'
 
